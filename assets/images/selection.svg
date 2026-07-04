@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 800 600">
+
+<defs>
+
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#EEF8FF"/>
+<stop offset="100%" stop-color="#D8F2FF"/>
+</linearGradient>
+
+<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FDFDFD"/>
+<stop offset="100%" stop-color="#E7EEF5"/>
+</linearGradient>
+
+<filter id="shadow">
+<feDropShadow dx="0" dy="8" stdDeviation="12"
+flood-opacity=".15"/>
+</filter>
+
+</defs>
+
+<rect width="800" height="600"
+fill="url(#bg)"/>
+
+<!-- Círculos decorativos -->
+
+<circle cx="130" cy="120"
+r="60"
+fill="#BFE8FF"
+opacity=".45"/>
+
+<circle cx="690" cy="470"
+r="80"
+fill="#B6D8FF"
+opacity=".35"/>
+
+<!-- Placa -->
+
+<rect
+x="140"
+y="150"
+width="520"
+height="300"
+rx="34"
+fill="url(#glass)"
+stroke="#D4E4F2"
+stroke-width="4"
+filter="url(#shadow)"/>
+
+<!-- Embriões -->
+
+<g>
+
+<circle cx="250" cy="240"
+r="38"
+fill="#A8D8FF"
+stroke="#4A90E2"
+stroke-width="3"/>
+
+<circle cx="250" cy="240"
+r="15"
+fill="#5A6ACF"/>
+
+</g>
+
+<g>
+
+<circle cx="400" cy="240"
+r="38"
+fill="#B8F0D8"
+stroke="#2EAE7E"
+stroke-width="3"/>
+
+<circle cx="400" cy="240"
+r="15"
+fill="#22A36A"/>
+
+</g>
+
+<g>
+
+<circle cx="550" cy="240"
+r="38"
+fill="#FFD7AE"
+stroke="#E79A35"
+stroke-width="3"/>
+
+<circle cx="550" cy="240"
+r="15"
+fill="#D87917"/>
+
+</g>
+
+<!-- Destaque do embrião escolhido -->
+
+<circle
+cx="400"
+cy="240"
+r="60"
+fill="none"
+stroke="#22A36A"
+stroke-width="5"
+stroke-dasharray="10 8"/>
+
+<!-- Micropipeta -->
+
+<g>
+
+<rect
+x="520"
+y="95"
+width="22"
+height="130"
+rx="8"
+fill="#D9E3EC"/>
+
+<polygon
+points="531,225 542,250 520,250"
+fill="#C5D2DD"/>
+
+<line
+x1="531"
+y1="250"
+x2="431"
+y2="240"
+stroke="#7A8A99"
+stroke-width="4"/>
+
+</g>
+
+<!-- Check -->
+
+<circle
+cx="620"
+cy="380"
+r="38"
+fill="#22C55E"/>
+
+<path
+d="M606 380
+L618 392
+L638 367"
+fill="none"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+
+<!-- Pequenas moléculas -->
+
+<circle cx="215" cy="370" r="6" fill="#5AA9E6"/>
+<circle cx="240" cy="390" r="6" fill="#5AA9E6"/>
+<line x1="215" y1="370"
+x2="240" y2="390"
+stroke="#5AA9E6"
+stroke-width="2"/>
+
+<circle cx="520" cy="370" r="6" fill="#22A36A"/>
+<circle cx="545" cy="390" r="6" fill="#22A36A"/>
+<line x1="520" y1="370"
+x2="545" y2="390"
+stroke="#22A36A"
+stroke-width="2"/>
+
+</svg>

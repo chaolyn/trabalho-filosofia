@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+
+<defs>
+
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#F7FBFF"/>
+<stop offset="100%" stop-color="#EAF4FF"/>
+</linearGradient>
+
+<linearGradient id="dnaBlue" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#4DA3FF"/>
+<stop offset="100%" stop-color="#1565C0"/>
+</linearGradient>
+
+<linearGradient id="dnaRed" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FF7B7B"/>
+<stop offset="100%" stop-color="#D32F2F"/>
+</linearGradient>
+
+<filter id="shadow">
+<feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".18"/>
+</filter>
+
+</defs>
+
+<rect width="800" height="600" fill="url(#bg)"/>
+
+<!-- círculos decorativos -->
+
+<circle cx="120" cy="110" r="70" fill="#D8ECFF"/>
+
+<circle cx="690" cy="470" r="90" fill="#E1F2FF"/>
+
+<!-- balança -->
+
+<g filter="url(#shadow)">
+
+<line
+x1="400"
+y1="120"
+x2="400"
+y2="420"
+stroke="#475569"
+stroke-width="10"
+stroke-linecap="round"/>
+
+<line
+x1="260"
+y1="180"
+x2="540"
+y2="180"
+stroke="#475569"
+stroke-width="8"
+stroke-linecap="round"/>
+
+<circle
+cx="400"
+cy="110"
+r="18"
+fill="#475569"/>
+
+</g>
+
+<!-- prato esquerdo -->
+
+<line
+x1="290"
+y1="180"
+x2="260"
+y2="260"
+stroke="#64748B"
+stroke-width="3"/>
+
+<line
+x1="350"
+y1="180"
+x2="380"
+y2="260"
+stroke="#64748B"
+stroke-width="3"/>
+
+<path
+d="M230 260 Q320 315 410 260"
+fill="#FFFFFF"
+stroke="#64748B"
+stroke-width="3"/>
+
+<!-- DNA -->
+
+<g transform="translate(265 215) scale(.55)">
+
+<path
+d="M30 0 C70 40 70 80 30 120
+C-10 160 -10 200 30 240"
+fill="none"
+stroke="url(#dnaBlue)"
+stroke-width="8"/>
+
+<path
+d="M110 0 C70 40 70 80 110 120
+C150 160 150 200 110 240"
+fill="none"
+stroke="url(#dnaRed)"
+stroke-width="8"/>
+
+<g stroke="#64748B" stroke-width="3">
+
+<line x1="40" y1="20" x2="100" y2="20"/>
+<line x1="25" y1="60" x2="115" y2="60"/>
+<line x1="15" y1="100" x2="125" y2="100"/>
+<line x1="15" y1="140" x2="125" y2="140"/>
+<line x1="25" y1="180" x2="115" y2="180"/>
+<line x1="40" y1="220" x2="100" y2="220"/>
+
+</g>
+
+</g>
+
+<!-- prato direito -->
+
+<line
+x1="450"
+y1="180"
+x2="420"
+y2="260"
+stroke="#64748B"
+stroke-width="3"/>
+
+<line
+x1="510"
+y1="180"
+x2="540"
+y2="260"
+stroke="#64748B"
+stroke-width="3"/>
+
+<path
+d="M390 260 Q480 315 570 260"
+fill="#FFFFFF"
+stroke="#64748B"
+stroke-width="3"/>
+
+<!-- símbolo da justiça -->
+
+<g transform="translate(480 275)">
+
+<circle
+cx="0"
+cy="-25"
+r="30"
+fill="#4F46E5"/>
+
+<text
+x="0"
+y="-15"
+text-anchor="middle"
+font-family="Arial"
+font-size="26"
+fill="white">
+
+⚖
+
+</text>
+
+</g>
+
+<!-- escudo -->
+
+<path
+d="
+M400 450
+L470 480
+L450 535
+L400 565
+L350 535
+L330 480
+Z"
+fill="#22C55E"
+filter="url(#shadow)"/>
+
+<path
+d="
+M382 510
+L396 524
+L422 492"
+fill="none"
+stroke="white"
+stroke-width="8"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+
+<!-- título -->
+
+<text
+x="400"
+y="70"
+text-anchor="middle"
+font-family="Arial"
+font-size="28"
+font-weight="bold"
+fill="#334155">
+
+Bioética
+
+</text>
+
+<!-- moléculas -->
+
+<g fill="#60A5FA">
+
+<circle cx="90" cy="460" r="7"/>
+<circle cx="120" cy="490" r="7"/>
+<circle cx="155" cy="460" r="7"/>
+
+<line x1="90" y1="460" x2="120" y2="490" stroke="#60A5FA" stroke-width="2"/>
+<line x1="120" y1="490" x2="155" y2="460" stroke="#60A5FA" stroke-width="2"/>
+
+</g>
+
+</svg>

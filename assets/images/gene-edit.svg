@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+
+<defs>
+
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#F6FBFF"/>
+<stop offset="100%" stop-color="#DDEFFF"/>
+</linearGradient>
+
+<linearGradient id="blueDNA" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#5AA9E6"/>
+<stop offset="100%" stop-color="#1F6FD6"/>
+</linearGradient>
+
+<linearGradient id="redDNA" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FF6B6B"/>
+<stop offset="100%" stop-color="#D63031"/>
+</linearGradient>
+
+<filter id="shadow">
+<feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".18"/>
+</filter>
+
+</defs>
+
+<rect width="800" height="600" fill="url(#bg)"/>
+
+<!-- círculos decorativos -->
+
+<circle cx="120" cy="120" r="70" fill="#BFE6FF" opacity=".4"/>
+<circle cx="680" cy="470" r="90" fill="#D5E8FF" opacity=".35"/>
+
+<!-- hélice -->
+
+<g filter="url(#shadow)">
+
+<path
+d="
+M270 90
+C370 140 370 210 270 260
+C170 310 170 380 270 430
+C370 480 370 540 270 570"
+fill="none"
+stroke="url(#blueDNA)"
+stroke-width="10"
+stroke-linecap="round"/>
+
+<path
+d="
+M530 90
+C430 140 430 210 530 260
+C630 310 630 380 530 430
+C430 480 430 540 530 570"
+fill="none"
+stroke="url(#redDNA)"
+stroke-width="10"
+stroke-linecap="round"/>
+
+</g>
+
+<!-- ligações -->
+
+<g stroke="#64748B" stroke-width="4">
+
+<line x1="300" y1="110" x2="500" y2="110"/>
+<line x1="260" y1="155" x2="540" y2="155"/>
+<line x1="220" y1="200" x2="580" y2="200"/>
+<line x1="210" y1="245" x2="590" y2="245"/>
+
+<line x1="590" y1="290" x2="210" y2="290"/>
+<line x1="570" y1="335" x2="230" y2="335"/>
+<line x1="540" y1="380" x2="260" y2="380"/>
+<line x1="500" y1="425" x2="300" y2="425"/>
+
+<line x1="470" y1="470" x2="330" y2="470"/>
+<line x1="510" y1="515" x2="290" y2="515"/>
+
+</g>
+
+<!-- região editada -->
+
+<rect
+x="340"
+y="245"
+width="120"
+height="90"
+rx="18"
+fill="#FFFFFF"
+stroke="#22C55E"
+stroke-width="4"/>
+
+<text
+x="400"
+y="300"
+font-size="42"
+text-anchor="middle"
+font-family="Arial"
+fill="#22C55E">DNA</text>
+
+<!-- tesoura -->
+
+<g transform="translate(520 120) rotate(-15)">
+
+<circle cx="0" cy="0" r="16"
+fill="white"
+stroke="#64748B"
+stroke-width="4"/>
+
+<circle cx="38" cy="0" r="16"
+fill="white"
+stroke="#64748B"
+stroke-width="4"/>
+
+<line
+x1="15"
+y1="12"
+x2="90"
+y2="85"
+stroke="#64748B"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<line
+x1="22"
+y1="-12"
+x2="95"
+y2="60"
+stroke="#64748B"
+stroke-width="7"
+stroke-linecap="round"/>
+
+</g>
+
+<!-- corte -->
+
+<line
+x1="455"
+y1="240"
+x2="495"
+y2="270"
+stroke="#EF4444"
+stroke-width="6"
+stroke-dasharray="10 8"/>
+
+<!-- check -->
+
+<circle
+cx="620"
+cy="430"
+r="38"
+fill="#22C55E"/>
+
+<path
+d="
+M607 430
+L620 443
+L640 417"
+fill="none"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+
+<!-- moléculas -->
+
+<g fill="#5AA9E6">
+
+<circle cx="120" cy="450" r="6"/>
+<circle cx="145" cy="470" r="6"/>
+<circle cx="170" cy="445" r="6"/>
+
+</g>
+
+<g stroke="#5AA9E6" stroke-width="2">
+
+<line x1="120" y1="450" x2="145" y2="470"/>
+<line x1="145" y1="470" x2="170" y2="445"/>
+
+</g>
+
+</svg>

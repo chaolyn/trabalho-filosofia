@@ -1,7 +1,10 @@
 /* ==========================================================
    STYLE.CSS
    ========================================================== */
-  #backToTop{
+  
+  
+  
+   #backToTop{
 
     position:fixed;
 
@@ -1317,5 +1320,31 @@ a,
     transform:scale(1.06);
 
     filter:brightness(1.08);
+
+}
+
+/* Navbar após scroll */
+
+.navbar.scrolled{
+
+    background: rgba(30,41,59,.95);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+}
+
+/* Link ativo */
+
+.nav-menu a.active{
+
+    color:#fff;
+
+}
+
+.nav-menu a.active::after{
+
+    width:100%;
 
 }

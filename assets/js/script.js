@@ -3,131 +3,107 @@
     Projeto: Seleção de Embriões e Edição Genética
 ======================================================*/
 
-
 /*======================================================
     SELETORES
 ======================================================*/
+
 const progressBar = document.querySelector(".progress-bar");
-
 const navbar = document.querySelector(".navbar");
-
 const sections = document.querySelectorAll("section");
-
 const navLinks = document.querySelectorAll(".nav-menu a");
-
 const revealElements = document.querySelectorAll(".reveal");
-
 const heroButton = document.querySelector(".btn");
+const backToTop = document.querySelector("#backToTop");
 
-/*======================================================
-    NAVBAR
-======================================================*/
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 60){
-
-        navbar.classList.add("scrolled");
-
-    }else{
-
-        navbar.classList.remove("scrolled");
-
-    }
-
-});
-
-
-
-
-/*======================================================
-    NAVIGATION
-======================================================*/
-
-navLinks.forEach(link=>{
-
-    link.addEventListener("click",e=>{
-
-        e.preventDefault();
-
-        const id=
-
-            link.getAttribute("href");
-
-        document.querySelector(id)
-
-        .scrollIntoView({
-
-            behavior:"smooth"
-
-        });
-
-    });
-
-});
-
-
-/*======================================================
-    PROGRESS BAR
-======================================================*/
-
-window.addEventListener("scroll", () => {
-
-    const scrollTop = window.scrollY;
-
-    const pageHeight =
-
-        document.documentElement.scrollHeight -
-
-        window.innerHeight;
-
-    const progress =
-
-        (scrollTop / pageHeight) * 100;
-
-    progressBar.style.width = progress + "%";
-
-});
 
 /*======================================================
     HERO INTRO
 ======================================================*/
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-    const heroItems=
+    const heroItems = document.querySelectorAll(".hero-content > *");
 
-        document.querySelectorAll(".hero-content>*");
+    heroItems.forEach((item, index) => {
 
-    heroItems.forEach((item,index)=>{
+        setTimeout(() => {
 
-        setTimeout(()=>{
+            item.style.transition = ".8s ease";
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
 
-            item.style.transition=".8s";
-
-            item.style.opacity="1";
-
-            item.style.transform="translateY(0)";
-
-        },index*250);
+        }, index * 250);
 
     });
 
 });
 
+
 /*======================================================
-    HERO BUTTON
+    NAVBAR + PROGRESS BAR + BOTÃO TOPO
 ======================================================*/
-const heroButton = document.querySelector(".hero-btn");
 
-if (heroButton) {
+window.addEventListener("scroll", () => {
 
-    heroButton.addEventListener("click", (event) => {
+    /* Navbar */
 
-        event.preventDefault();
+    if (window.scrollY > 60) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+    /* Barra */
+
+    const scrollTop = window.scrollY;
+
+    const pageHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress = (scrollTop / pageHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+    /* Botão topo */
+
+    if (window.scrollY > 500) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+    /* Menu ativo */
+
+    activeMenu();
+
+    /* Reveal */
+
+    revealOnScroll();
+
+});
+
+
+/*======================================================
+    MENU SUAVE
+======================================================*/
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", e => {
+
+        e.preventDefault();
 
         const target = document.querySelector(
-            heroButton.getAttribute("href")
+            link.getAttribute("href")
         );
 
         if (target) {
@@ -140,8 +116,36 @@ if (heroButton) {
 
     });
 
-}
+});
 
+
+/*======================================================
+    BOTÃO HERO
+======================================================*/
+
+if (heroButton) {
+
+    heroButton.addEventListener("click", e => {
+
+        e.preventDefault();
+
+        const target = document.querySelector(
+            heroButton.getAttribute("href")
+        );
+
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    });
+
+}
 
 
 /*======================================================
@@ -152,13 +156,12 @@ function revealOnScroll() {
 
     revealElements.forEach((element, index) => {
 
-        const windowHeight = window.innerHeight;
-
-        const revealTop = element.getBoundingClientRect().top;
+        const revealTop =
+            element.getBoundingClientRect().top;
 
         const revealPoint = 120;
 
-        if (revealTop < windowHeight - revealPoint) {
+        if (revealTop < window.innerHeight - revealPoint) {
 
             setTimeout(() => {
 
@@ -172,50 +175,11 @@ function revealOnScroll() {
 
 }
 
-window.addEventListener("scroll", revealOnScroll);
-
 revealOnScroll();
 
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
 
 /*======================================================
-    ACTIVE MENU
-======================================================*/
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 180;
-
-        if(window.scrollY >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") === "#" + current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-/*======================================================
-    ACTIVE MENU
+    MENU ATIVO
 ======================================================*/
 
 function activeMenu() {
@@ -227,10 +191,14 @@ function activeMenu() {
         const sectionTop = section.offsetTop - 150;
         const sectionHeight = section.clientHeight;
 
-        if (window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight) {
+        if (
 
-            current = section.getAttribute("id");
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+
+        ) {
+
+            current = section.id;
 
         }
 
@@ -250,37 +218,25 @@ function activeMenu() {
 
 }
 
-window.addEventListener("scroll", activeMenu);
+activeMenu();
 
 
 /*======================================================
-    BACK TO TOP
+    VOLTAR AO TOPO
 ======================================================*/
 
-const backToTop = document.querySelector("#backToTop");
+if (backToTop) {
 
-window.addEventListener("scroll", () => {
+    backToTop.addEventListener("click", () => {
 
-    if(window.scrollY > 500){
+        window.scrollTo({
 
-        backToTop.classList.add("show");
+            top: 0,
 
-    }else{
+            behavior: "smooth"
 
-        backToTop.classList.remove("show");
-
-    }
-
-});
-
-backToTop.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
+        });
 
     });
 
-});
+}
